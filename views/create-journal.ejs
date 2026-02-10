@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/queries.css">
+    <link rel="stylesheet" href="./css/create-journal.css">
+
+    <title>New Entry | Quill</title>
+
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a class="beta" href="./dashboard.ejs">
+                <img class="logo-md" src="./images/quill.svg" alt="quill logo">
+            </a>
+            <div style="display: flex; align-items: center; gap: 2rem;">
+                <a class="btn btn-primary-outline" href="./dashboard.ejs">Back to Dashboard</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="create-section">
+        <div class="create-card">
+            <h1 class="create-heading">New Journal Entry</h1>
+            <p class="create-sub">Capture your thoughts, ideas, and moods.</p>
+
+            <form action="/api/v1/journals" method="POST" enctype="multipart/form-data">
+                
+                <div class="form-group">
+                    <label class="form-label" for="main-title">Title</label>
+                    <input class="form-input" type="text" id="main-title" name="title" placeholder="What's on your mind?" minlength="3" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="journal-category">Category</label>
+                    <div class="select-wrapper">
+                        <select class="form-input" id="journal-category" name="category" required>
+                            <option value="" disabled selected>Select a category...</option>
+                            <option value="idea">💡 Idea</option>
+                            <option value="note">📝 Note</option>
+                            <option value="goal">🎯 Goal</option>
+                            <option value="habit">⚡ Habit</option>
+                            <option value="memory">📸 Memory</option>
+                            <option value="mood">😌 Mood</option>
+                            <option value="event">📅 Event</option>
+                            <option value="task">✅ Task</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+        <label class="form-label" for="journal-file">Attachment (Optional)</label>
+        <input class="form-input" type="file" id="journal-file" name="image" accept="image/*">
+        <small style="font-size: 1.2rem; color: #666;">Max size: 2MB. Images only.</small>
+    </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="journal-entry">Your Entry</label>
+                    <textarea class="form-input form-textarea" id="journal-entry" name="entry" rows="8" minlength="10" placeholder="Start typing here..." required></textarea>
+                </div>
+
+                <div class="btn-container">
+                    <button type="submit" class="btn btn-primary btn-wide">Save Entry</button>
+                    <a href="/dashboard" class="btn-text">Cancel</a>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+        <footer class="footer">
+            <a href="/index"><img class="logo-sm" src="./images/quill.svg" alt="quill logo"></a>
+            <ul class="social-icons-container">
+                <li><a href="https://www.instagram.com/"><img class="social-icons" src="./images/instagram.svg" alt="instagram logo"></a></li>
+                <li><a href="https://www.facebook.com/"><img class="social-icons" src="./images/facebook.svg" alt="facebook logo"></a></li>
+                <li><a href="https://www.tiktok.com/"><img class="social-icons" src="./images/tiktok.svg" alt="tiktok logo"></a></li>
+                <li><a href="https://www.linkedin.com/"><img class="social-icons" src="./images/linkedin.svg" alt="linkedin logo"></a></li>
+                <li><a href="https://www.youtube.com/"><img class="social-icons" src="./images/youtube.svg" alt="youtube logo"></a></li>
+            </ul>
+            <p class="small-text">Made with <span class="heart-icon">♥︎</span> in Nigeria</p>
+        </footer>
+    </div>
+
+</body>
+</html>

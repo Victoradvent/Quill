@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/queries.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="validation.js"></script>
+    
+    <title>Login | Quill</title>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a class="beta" href="/index">
+                <img class="logo-md" src="./images/quill.svg" alt="quill logo">
+            </a>
+            <ul class="nav-btn-container">
+                <li><a class="btn btn-primary" href="/register">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="login-section">
+        <div class="login-card">
+            <h2 class="login-heading">Welcome Back</h2>
+            <p class="login-sub">Please enter your details to sign in.</p>
+
+            <form action="/login" method="POST">
+                
+                <div class="form-group">
+                    <label class="form-label" for="email">Email Address</label>
+                    <input class="form-input" type="email" id="email" name="email" placeholder="name@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <input class="form-input" type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+            </form>
+
+            <p class="form-link">
+                Don't have an account? <a href="/register">Register</a>
+            </p>
+        </div>
+    </main>
+
+        <footer class="footer">
+            <a href=".//index"><img class="logo-sm" src="./images/quill.svg" alt="quill logo"></a>
+            <ul class="social-icons-container">
+                <li><a href="https://www.instagram.com/"><img class="social-icons" src="./images/instagram.svg" alt="instagram logo"></a></li>
+                <li><a href="https://www.facebook.com/"><img class="social-icons" src="./images/facebook.svg" alt="facebook logo"></a></li>
+                <li><a href="https://www.tiktok.com/"><img class="social-icons" src="./images/tiktok.svg" alt="tiktok logo"></a></li>
+                <li><a href="https://www.linkedin.com/"><img class="social-icons" src="./images/linkedin.svg" alt="linkedin logo"></a></li>
+                <li><a href="https://www.youtube.com/"><img class="social-icons" src="./images/youtube.svg" alt="youtube logo"></a></li>
+            </ul>
+            <ul class="footer-links-container">
+                <li><a href="/index">Home</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            </ul>
+            <p class="small-text">Made with <span class="heart-icon">♥︎</span> in Nigeria</p>
+        </footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+.login-section {
+    min-height: 60vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    background-color: #fdfdfd;
+}
+
+.login-card {
+    background-color: #fff;
+    padding: 4rem;
+    border-radius: 9px;
+    box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+    width: 100%;
+    max-width: 45rem; /* Keeps the card compact */
+    border: 1px solid #eee;
+}
+
+.login-heading {
+    font-size: var(--text-h4); /* Inherits from app.css */
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.login-sub {
+    font-size: var(--text-sm);
+    color: #555;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-label {
+    display: block;
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 0.8rem;
+    color: #333;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: var(--text-base);
+    font-family: inherit;
+    border: 1px solid #ddd;
+    border-radius: 9px;
+    transition: all 0.3s;
+}
+
+/* Interaction States */
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-base); /* Uses your brand blue */
+    box-shadow: 0 0 0 4px var(--primary-tint);
+}
+
+.btn-full {
+    width: 100%;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+/* Link Styling within the form */
+.form-link {
+    text-align: center; 
+    margin-top: 2rem; 
+    font-size: var(--text-sm);
+}
+
+.form-link a {
+    color: var(--primary-base); 
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.form-link a:hover {
+    text-decoration: underline;
+}

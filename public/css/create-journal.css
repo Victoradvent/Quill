@@ -1,0 +1,102 @@
+.create-section {
+    background-color: #fdfdfd;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    padding: 6rem 2rem;
+}
+
+.create-card {
+    background-color: #fff;
+    width: 100%;
+    max-width: 80rem; /* Wider than login card for writing space */
+    padding: 5rem;
+    border-radius: 12px;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.06);
+    border: 1px solid #eee;
+}
+
+.create-heading {
+    font-size: var(--text-h2);
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.create-sub {
+    font-size: var(--text-base);
+    color: #666;
+    margin-bottom: 4rem;
+}
+
+/* Reusing Form Styles with Tweaks */
+.form-group {
+    margin-bottom: 3rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1.6rem;
+    font-size: 1.6rem;
+    font-family: inherit;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: all 0.3s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-base);
+    box-shadow: 0 0 0 4px var(--primary-tint);
+}
+
+/* Specific Style for Textarea */
+.form-textarea {
+    resize: vertical; /* Allows user to drag expanding vertically only */
+    line-height: 1.6;
+}
+
+/* Button Layout */
+.btn-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.btn-wide {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.btn-text {
+    font-size: 1.6rem;
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-text:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .create-card {
+        padding: 3rem 2rem;
+    }
+    
+    .create-heading {
+        font-size: 3.8rem;
+    }
+}
