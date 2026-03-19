@@ -18,7 +18,7 @@
 <body>
 
     <header>
-        <nav class="navbar">
+        <nav class="navbar"style="padding-inline: 17%;">
             <a class="beta" href="/dashboard">
                 <img class="logo-md" src="./images/quill.svg" alt="quill logo">
             </a>
@@ -39,36 +39,50 @@
     </div>
 </div>
 
+        <form action="/dashboard" method="GET" style="display: flex; gap: 1rem; margin-bottom: 3rem;">
+            <input type="text" name="search" placeholder="Search titles..." class="form-input" style="flex: 1;">
+            <select name="category" class="form-input" style="width: auto;">
+                <option value="All">All Categories</option>
+                <option value="idea">Idea</option>
+                <option value="note">Note</option>
+                <option value="goal">Goal</option>
+                <option value="habit">Habit</option>
+                <option value="memory">Memory</option>
+                <option value="mood">Mood</option>
+                <option value="event">Event</option>
+                <option value="task">Task</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
 
         <div class="journal-grid">
-    <% if (journals.length === 0) { %>
-        <p>No journals yet. Write your first one!</p>
-    <% } else { %>
-        
-        <% journals.forEach(function(journal) { %>
-            <div class="journal-card">
-                <span class="tag tag-<%= journal.category %>">
-                    <%= journal.category %>
-                </span>
-                
-                <h3 class="card-title"><%= journal.title %></h3>
-                
-                <p class="card-date"><%= journal.createdAt.toDateString() %></p>
-                
-                <p class="card-snippet">
-                    <%= journal.entry.substring(0, 100) %>...
-                </p>
+            <% if (journals.length === 0) { %>
+                <p>No journals found. Write your first one!</p>
+            <% } else { %>
+                <% journals.forEach(function(journal) { %>
+                    <div class="journal-card">
+                        <span class="tag tag-<%= journal.category %>"><%= journal.category %></span>
+                        <h3 class="card-title"><%= journal.title %></h3>
+                        <p class="card-date"><%= journal.createdAt.toDateString() %></p>
+                        
+                        <p class="card-snippet">
+                            <%= journal.entry.replace(/<[^>]+>/g, '').substring(0, 100) %>...
+                        </p>
 
-                <% if(journal.image) { %>
-                    <div style="margin-bottom:1rem; color: #888; font-size:1.2rem;">(Contains Image)</div>
-                <% } %>
-                
-                <a href="#" class="card-link">Read more &rarr;</a>
-            </div>
-        <% }); %>
-
-    <% } %>
-</div>
+                        <% if(journal.image) { %>
+                            <div style="margin-bottom:1rem; color: #888; font-size:1.2rem;">(Contains Image)</div>
+                        <% } %>
+                        
+                        <div style="display: flex; gap: 10px; margin-top: auto;">
+                            <a href="/edit-journal/<%= journal._id %>" class="btn btn-primary-outline" style="padding: 5px 10px; font-size: 1.2rem;">Edit</a>
+                            <form action="/api/v1/journals/<%= journal._id %>?_method=DELETE" method="POST" onsubmit="return confirm('Delete this entry?');">
+                                <button type="submit" class="btn" style="background: #ff4d4f; color: white; padding: 5px 10px; font-size: 1.2rem; border: none; border-radius: 4px; cursor: pointer;">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } %>
+        </div>
 
     </main>
     

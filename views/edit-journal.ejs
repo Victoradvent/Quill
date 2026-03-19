@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/create-journal.css">
+    <title>Edit Entry | Quill</title>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+      tinymce.init({
+        selector: '#journal-entry',
+        plugins: 'lists link',
+        toolbar: 'undo redo | bold italic | bullist numlist | link',
+        menubar: false
+      });
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="/dashboard"><img class="logo-md" src="/images/quill.svg" alt="quill"></a>
+            <a class="btn btn-primary-outline" href="/dashboard">Cancel</a>
+        </nav>
+    </header>
+
+    <main class="create-section">
+        <div class="create-card">
+            <h1 class="create-heading">Edit Entry</h1>
+            <form action="/api/v1/journals/<%= journal._id %>?_method=PUT" method="POST">
+                
+                <div class="form-group">
+                    <label class="form-label">Title</label>
+                    <input class="form-input" type="text" name="title" value="<%= journal.title %>" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Category</label>
+                    <select class="form-input" name="category" required>
+                        <option value="idea" <%= journal.category === 'idea' ? 'selected' : '' %>>Idea</option>
+                        <option value="note" <%= journal.category === 'note' ? 'selected' : '' %>>Note</option>
+                        <option value="goal" <%= journal.category === 'goal' ? 'selected' : '' %>>Goal</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Your Entry</label>
+                    <textarea class="form-input form-textarea" id="journal-entry" name="entry" rows="8"><%= journal.entry %></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-wide">Update Entry</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
