@@ -1,9 +1,12 @@
 /* DASHBOARD STYLES */
-
+.navbar{
+    padding: 4rem 2rem;
+}
 .dashboard-container {
     max-width: 120rem;
     margin: 0 auto;
     padding: 4rem 2rem;
+    height: 100vh;
 }
 
 /* Header Area */

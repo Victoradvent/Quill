@@ -18,12 +18,11 @@
 <body>
 
     <header>
-        <nav class="navbar"style="padding-inline: 17%;">
+        <nav class="navbar">
             <a class="beta" href="/dashboard">
                 <img class="logo-md" src="./images/quill.svg" alt="quill logo">
             </a>
             <div style="display: flex; align-items: center; gap: 2rem;">
-                <span class="user-greeting">Welcome, User</span>
                 <a class="btn btn-primary-outline" href="/index">Logout</a>
             </div>
         </nav>
@@ -57,7 +56,7 @@
 
         <div class="journal-grid">
             <% if (journals.length === 0) { %>
-                <p>No journals found. Write your first one!</p>
+                <p>No journals found. Write your first journal!</p>
             <% } else { %>
                 <% journals.forEach(function(journal) { %>
                     <div class="journal-card">

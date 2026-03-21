@@ -14,7 +14,7 @@
 
     <title>New Entry | Quill</title>
 
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <!-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
       tinymce.init({
         selector: '#journal-entry',
@@ -22,17 +22,17 @@
         toolbar: 'undo redo | bold italic | bullist numlist | link',
         menubar: false
       });
-    </script>
+    </script> -->
 </head>
 <body>
 
     <header>
-        <nav class="navbar" style="padding-inline: 17%;">
-            <a class="beta" href="./dashboard.ejs">
+        <nav class="navbar">
+            <a class="beta" href="/index.ejs">
                 <img class="logo-md" src="./images/quill.svg" alt="quill logo">
             </a>
             <div style="display: flex; align-items: center; gap: 2rem;">
-                <a class="btn btn-primary-outline" href="./dashboard.ejs">Back to Dashboard</a>
+                <a class="btn btn-primary-outline" href="/dashboard.ejs">Back to Dashboard</a>
             </div>
         </nav>
     </header>
