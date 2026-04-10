@@ -12,8 +12,8 @@ const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 
 // Models
-const User = require('./models/User');
-const Journal = require('./models/Journal');
+const User = require('./models/user');
+const Journal = require('./models/journal');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
