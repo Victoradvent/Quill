@@ -9,4 +9,5 @@ const journalSchema = new mongoose.Schema({
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' } // Link to the user
 });
 
+
 module.exports = mongoose.model('Journal', journalSchema);
